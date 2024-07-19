@@ -14,7 +14,7 @@ router.get("/auth", (req, res) => {
 });
 router.post("/logout", (req, res) => {
   try {
-    res.clearCookie("usertoken" {
+    res.clearCookie("usertoken", {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production", // Match the secure flag
       sameSite: "None",
