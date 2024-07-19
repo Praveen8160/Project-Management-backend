@@ -7,7 +7,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://project-management-frontend-21t1.onrender.com",
     credentials: true, // If you are sending cookies or authorization headers
   })
 );
