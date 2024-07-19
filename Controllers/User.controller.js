@@ -33,7 +33,7 @@ const handleUserSignin = async (req, res) => {
         const usertoken = setUserToken(checkUser);
         res.cookie("usertoken", usertoken, {
           httpOnly: true,
-          secure: true,
+          secure: process.env.NODE_ENV === "production", // Use secure cookies in production
           sameSite: "None",
         });
         return res.status(200).json({ success: true });

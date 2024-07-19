@@ -14,9 +14,11 @@ router.get("/auth", (req, res) => {
 });
 router.post("/logout", (req, res) => {
   try {
-    res.clearCookie("usertoken");
-    // const Token = req.cookies.token;
-    // console.log(Token);
+    res.clearCookie("usertoken" {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // Match the secure flag
+      sameSite: "None",
+    });
     res.json({ success: true });
   } catch (error) {}
 });
